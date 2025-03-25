@@ -1,12 +1,21 @@
 import './App.css';
+import Tree from './components/Tree';
 
 function App() {
-  return <div>
-    <h1>Hello World</h1>
-    <p>I love coding!</p>
-  </div>
-  
-
+  return (
+    <>
+      <section className="columns">
+        <Tree 
+          name="Live Oak"
+          description="Doesn't lose it's leaves"
+          image="images/live-oak.jpeg"/>
+        <Tree 
+          name="Dogwood"
+          description="Flowers in spring"
+          image="images/dogwood.jpeg" />
+      </section>
+    </>
+  );
 }
 
 export default App;
