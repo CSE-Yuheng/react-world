@@ -1,13 +1,13 @@
-import "./css/Tree.css";
+import "./css/Header.css";
+import Navigation from "./Navigation";
 
-function Tree(props) {
-    return (
-        <section className="tree">
-            <h3>{props.name}</h3>
-            <p>{props.description}</p>
-            <img src={props.image} />
-        </section>
+function Header() {
+    return(
+        <header>
+            <h1>Title of the Site</h1>
+            <Navigation />
+        </header>
     );
-}
+};
 
-export default Tree;
+export default Header;
