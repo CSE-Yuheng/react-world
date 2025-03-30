@@ -1,13 +1,13 @@
-import "./css/Header.css";
-import Navigation from "./Navigation";
+import React from 'react';
+import './css/Tree.css';
 
-function Header() {
-    return(
-        <header>
-            <h1>Title of the Site</h1>
-            <Navigation />
-        </header>
-    );
-};
+function Tree({ title = "Travel Tip", text = "This is a sample travel tip or blog preview." }) {
+  return (
+    <div className="tree-card">
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
+}
 
-export default Header;
+export default Tree;
