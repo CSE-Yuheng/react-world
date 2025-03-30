@@ -1,6 +1,17 @@
-.tree {
-    background:skyblue;
-    padding:5px;
-    margin:5px;
-    border-radius: 5px;
+.tree-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 300px;
+  padding: 16px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.tree-card h3 {
+  margin-top: 0;
+  color: #4CAF50;
+}
+.tree-card p {
+  margin: 8px 0 0;
+  color: #555;
 }
