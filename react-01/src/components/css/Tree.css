@@ -1,17 +1,35 @@
-.tree-card {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
+/* Tree.css - Card component styling */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  max-width: 300px;
-  padding: 16px;
-  margin: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  /* Add a subtle shadow for depth */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
 }
-.tree-card h3 {
-  margin-top: 0;
-  color: #4CAF50;
+
+/* Card image takes full width */
+.card-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
-.tree-card p {
-  margin: 8px 0 0;
+
+/* Card content padding */
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  margin: 0 0 10px;
+  font-size: 1.25em;
+  color: #333;
+}
+
+.card-text {
+  margin: 0;
+  font-size: 1em;
   color: #555;
 }
