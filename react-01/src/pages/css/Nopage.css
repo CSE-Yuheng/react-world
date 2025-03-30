@@ -1,0 +1,19 @@
+.nopage {
+  text-align: center;
+  padding: 40px 20px;
+}
+.nopage h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.nopage p {
+  margin-bottom: 0.5em;
+}
+.nopage a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nopage a:hover {
+  text-decoration: underline;
+}
