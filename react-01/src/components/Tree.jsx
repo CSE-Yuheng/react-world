@@ -1,11 +1,14 @@
 import React from 'react';
 import './css/Tree.css';
 
-function Tree({ title = "Travel Tip", text = "This is a sample travel tip or blog preview." }) {
+function Tree({ image, title, description }) {
   return (
-    <div className="tree-card">
-      <h3>{title}</h3>
-      <p>{text}</p>
+    <div className="card">
+      <img src={image} alt={title} className="card-img" />
+      <div className="card-content">
+        <h3 className="card-title">{title}</h3>
+        <p className="card-text">{description}</p>
+      </div>
     </div>
   );
 }
