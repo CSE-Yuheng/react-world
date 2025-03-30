@@ -1,39 +1,52 @@
+/* Navigation.css */
 .nav {
-  background-color: #333;
+  background: #333;
+  /* Sticky top positioning if needed: */
+  /* position: sticky; top: 0; z-index: 1000; */
 }
 
-/* Horizontal menu styles */
-.nav-list {
+.nav-links {
   list-style: none;
-  display: flex;
-  justify-content: center;
   margin: 0;
   padding: 0;
-}
-.nav-list li a {
-  display: block;
-  padding: 14px 20px;
-  text-decoration: none;
-  color: white;
-}
-.nav-list li a:hover {
-  background-color: #111;
+  display: flex;
+  flex-direction: row;        /* horizontal menu by default */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Vertical stacked menu on small screens */
-@media (max-width: 600px) {
-  .nav-list {
-    flex-direction: column;
-    align-items: center;
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-item {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px;
+}
+
+/* Hover and focus states for accessibility */
+.nav-item:hover,
+.nav-item:focus {
+  text-decoration: underline;
+}
+
+/* Active link style (NavLink adds .active class when active) */
+.nav-item.active {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* Responsive: stack menu vertically on smaller screens */
+@media screen and (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;   /* vertical menu on narrow screens */
+    align-items: flex-start;
+    padding: 10px;
   }
-  .nav-list li {
-    width: 100%;
-  }
-  .nav-list li:not(:last-child) a {
-    border-bottom: 1px solid #444; /* separator line between menu items */
-  }
-  .nav-list li a {
-    width: 100%;
-    text-align: center;
+  .nav-links li {
+    margin: 5px 0;
   }
 }
