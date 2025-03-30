@@ -5,8 +5,12 @@ function About() {
   return (
     <div className="about">
       <h2>About This Blog</h2>
-      <p>This travel blog is a personal journal of my journeys across the globe.</p>
-      <p>I share destination guides, travel hacks, and stories to inspire others to explore the world.</p>
+      <p>
+        Traveling opens up a world of experiences. This blog was created to document journeys across continents, cultures, and cuisines. We believe that every destination has a story to tell.
+      </p>
+      <p>
+        Our mission is to inspire and inform fellow travelers. Here you'll find travel itineraries, tips for budget traveling, cultural insights, and much more. We hope our stories encourage you to pack your bags and explore the world around you.
+      </p>
     </div>
   );
 }
