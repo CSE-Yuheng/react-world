@@ -1,0 +1,39 @@
+.nav {
+  background-color: #333;
+}
+
+/* Horizontal menu styles */
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.nav-list li a {
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: white;
+}
+.nav-list li a:hover {
+  background-color: #111;
+}
+
+/* Vertical stacked menu on small screens */
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-list li {
+    width: 100%;
+  }
+  .nav-list li:not(:last-child) a {
+    border-bottom: 1px solid #444; /* separator line between menu items */
+  }
+  .nav-list li a {
+    width: 100%;
+    text-align: center;
+  }
+}
