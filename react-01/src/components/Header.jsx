@@ -1,13 +1,12 @@
-import "./css/Header.css";
-import Navigation from "./Navigation";
+import React from 'react';
+import './css/Header.css';
 
 function Header() {
-    return(
-        <header>
-            <h1>Title of the Site</h1>
-            <Navigation />
-        </header>
-    );
-};
+  return (
+    <header className="header">
+      <h1>My Travel Blog</h1>
+    </header>
+  );
+}
 
 export default Header;
