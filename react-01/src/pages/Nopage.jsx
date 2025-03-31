@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './css/Nopage.css';
+import { NavLink } from 'react-router-dom';
+import './css/NoPage.css';
 
-function Nopage() {
+function NoPage() {
   return (
-    <div className="nopage">
+    <div className="no-page">
       <h2>404 - Page Not Found</h2>
-      <p>Oops! The page you're looking for does not exist.</p>
-      <p><Link to="/">Return to Home</Link></p>
+      <p>Oops! The page you are looking for does not exist.</p>
+      <NavLink to="/" className="home-link">Return to Home</NavLink>
     </div>
   );
 }
 
-export default Nopage;
+export default NoPage;
