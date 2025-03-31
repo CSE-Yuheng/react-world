@@ -1,32 +1,35 @@
+// Blog.jsx (corrected and reliable)
 import React from 'react';
 import Tree from '../components/Tree';
 import './css/Blog.css';
 
+// Import images explicitly from src/images
+import alps from '../images/alps.jpg';
+import bali from '../images/bali.jpg';
+import safari from '../images/safari.jpg';
+
 function Blog() {
-  // Simulated blog post data (could be fetched from JSON in the future)
   const posts = [
     {
       title: "Exploring the Alps",
-      description: "Experience the breathtaking views and alpine culture of the Swiss Alps. From snow-capped peaks to charming villages, the Alps offer an unforgettable adventure.",
-      image: "/images/alps.jpg"
+      description: "Experience the Alps...",
+      image: alps // <-- use imported image
     },
     {
       title: "Beach Paradise in Bali",
-      description: "Discover the tranquil beaches of Bali, with golden sands, crystal-clear waters, and vibrant sunsets. A perfect destination for relaxation and rejuvenation.",
-      image: "/images/bali.jpg"
+      description: "Discover Bali beaches...",
+      image: bali // <-- use imported image
     },
     {
       title: "Safari in Serengeti",
-      description: "Join us on a safari through Serengeti National Park. Witness the majestic wildlife in their natural habitat and the stunning landscapes of the African savannah.",
-      image: "/images/safari.jpg"
+      description: "Safari through Serengeti...",
+      image: safari // <-- use imported image
     }
-    // You can add more objects to this array for more cards
   ];
 
   return (
     <div className="blog-page">
       <h2>Travel Blog Posts</h2>
-      <p>Take a peek at some of our latest travel adventures:</p>
       <div className="cards-container">
         {posts.map((post, index) => (
           <Tree 
