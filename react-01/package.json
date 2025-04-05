@@ -2,7 +2,7 @@
   "name": "react-world/react-01",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://github.com/CSE-Yuheng/react-world/edit/main/react-01/",
+  "homepage": "https://CSE-Yuheng.github.io/react-world/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
