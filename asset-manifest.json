@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/react-world/static/css/main.8cf1aadd.css",
-    "main.js": "/react-world/static/js/main.72983098.js",
-    "static/media/bali.jpg": "/react-world/static/media/bali.6c860f90efcac6b59762.jpg",
-    "static/media/alps.jpg": "/react-world/static/media/alps.8abe91fe3a5b67d11eb0.jpg",
-    "static/media/safari.jpg": "/react-world/static/media/safari.28bde42bc63646e502ed.jpg",
+    "main.css": "/react-world/static/css/main.0232a987.css",
+    "main.js": "/react-world/static/js/main.7ce18f71.js",
     "index.html": "/react-world/index.html",
-    "main.8cf1aadd.css.map": "/react-world/static/css/main.8cf1aadd.css.map",
-    "main.72983098.js.map": "/react-world/static/js/main.72983098.js.map"
+    "main.0232a987.css.map": "/react-world/static/css/main.0232a987.css.map",
+    "main.7ce18f71.js.map": "/react-world/static/js/main.7ce18f71.js.map"
   },
   "entrypoints": [
-    "static/css/main.8cf1aadd.css",
-    "static/js/main.72983098.js"
+    "static/css/main.0232a987.css",
+    "static/js/main.7ce18f71.js"
   ]
 }
