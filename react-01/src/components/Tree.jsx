@@ -1,4 +1,3 @@
-// Tree.jsx
 import React from 'react';
 import './css/Tree.css';
 
@@ -7,8 +6,8 @@ function Tree({ image, title, description }) {
     <div className="card">
       <img src={image} alt={title} className="card-img" />
       <div className="card-content">
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <h3 className="card-title">{title}</h3>
+        <p className="card-text">{description}</p>
       </div>
     </div>
   );
