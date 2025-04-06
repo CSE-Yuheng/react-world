@@ -1,24 +1,37 @@
-import React from 'react';
+// src/components/Navigation.jsx
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './css/Navigation.css';
 
 function Navigation() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <nav className="nav">
-      <ul className="nav-links">
+      <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Navigation">
+        &#9776;
+      </button>
+      <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         <li>
-          <NavLink to="/" end className="nav-item">
+          <NavLink to="/" end onClick={() => setMenuOpen(false)}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" className="nav-item">
+          <NavLink to="/about" onClick={() => setMenuOpen(false)}>
             About
           </NavLink>
         </li>
         <li>
-          <NavLink to="/blog" className="nav-item">
+          <NavLink to="/blog" onClick={() => setMenuOpen(false)}>
             Blog
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
+            Contact
           </NavLink>
         </li>
       </ul>
