@@ -1,9 +1,8 @@
-/* About.css */
+/* src/pages/css/About.css */
 .about {
   max-width: 800px;
   margin: 0 auto;
-  text-align: left;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .about h2 {
@@ -15,5 +14,4 @@
 .about p {
   font-size: 1.1em;
   line-height: 1.6;
-  margin-bottom: 1em;
 }
