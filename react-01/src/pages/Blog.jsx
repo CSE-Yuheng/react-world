@@ -1,6 +1,9 @@
 // src/pages/Blog.jsx
 import React from 'react';
 import './css/Blog.css';
+import essentialToolsImg from '../images/Essential Tools.jpg';
+import toolSafetyImg from '../images/Tool Safety.jpg';
+import choosingSawImg from '../images/Choosing a Saw.jpg';
 
 const Blog = () => {
   return (
@@ -10,7 +13,7 @@ const Blog = () => {
 
       <div className="blog-post">
         <h2>5 Essential Tools for Every DIY Enthusiast</h2>
-        <img src="/images/Essential Tools.jpg" alt="Essential Tools" />
+        <img src={essentialToolsImg} alt="Essential Tools" />
         <p>
           Whether you’re just starting out or expanding your tool collection, these
           five essentials will help you tackle a wide variety of projects...
@@ -20,7 +23,7 @@ const Blog = () => {
 
       <div className="blog-post">
         <h2>Power Tool Safety: Best Practices</h2>
-        <img src="/images/Tool Safety.jpg" alt="Tool Safety" />
+        <img src={toolSafetyImg} alt="Tool Safety" />
         <p>
           Safety should always come first when operating power tools. Learn the
           must-follow guidelines for keeping yourself and your workspace safe...
@@ -30,7 +33,7 @@ const Blog = () => {
 
       <div className="blog-post">
         <h2>How to Choose the Right Saw for Your Project</h2>
-        <img src="/images/Choosing a Saw.jpg" alt="Choosing a Saw" />
+        <img src={choosingSawImg} alt="Choosing a Saw" />
         <p>
           Circular saw, jigsaw, or table saw? Here’s how to decide which one fits
           your project’s needs best...
@@ -42,3 +45,4 @@ const Blog = () => {
 };
 
 export default Blog;
+
