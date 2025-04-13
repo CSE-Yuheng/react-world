@@ -1,5 +1,4 @@
-/* src/components/css/Tree.css */
-.card {
+.tool-card {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -9,23 +8,24 @@
   flex-direction: column;
 }
 
-.card-img {
+.tool-card-img {
   width: 100%;
   height: auto;
 }
 
-.card-content {
+.tool-card-content {
   padding: 15px;
 }
 
-.card-title {
+.tool-card-title {
   margin: 0 0 10px;
   font-size: 1.25em;
-  color: #333;
+  color: #1e3d59;
 }
 
-.card-text {
+.tool-card-text {
   margin: 0;
+  font-size: 0.95em;
   color: #555;
 }
 
