@@ -32,7 +32,7 @@ const Home = () => {
       <main>
         {/* Hero Section */}
         <section className="hero">
-          <img src="images/Workshop scene.jpg" alt="Workshop scene" />
+          <img src="/images/Workshop scene.jpg" alt="Workshop scene" />
           <h1>Welcome to ToolHub</h1>
           <p>
             Your one-stop destination for all DIY and professional tool needs. Explore
