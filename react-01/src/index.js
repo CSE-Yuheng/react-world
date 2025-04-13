@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './pages/Home';
 import About from './pages/About';
-import Tools from './pages/Tools';
+import Blog from './pages/Blog';
+import Shop from './pages/Shop';
 import Contact from './pages/Contact';
 import NoPage from './pages/NoPage';
 import './index.css';
@@ -17,7 +18,8 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="tools" element={<Tools />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="shop" element={<Shop />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />
         </Route>
