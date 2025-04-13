@@ -1,14 +1,13 @@
-/* src/pages/css/Blog.css */
-.blog-page {
+.tools-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.blog-page h2 {
+.tools-page h2 {
   text-align: center;
   margin-bottom: 1em;
-  color: #444;
+  color: #1e3d59;
 }
 
 .cards-container {
