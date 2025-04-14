@@ -1,0 +1,31 @@
+/* index.css - global styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Use a comfortable font for reading */
+  font-family: Arial, sans-serif;
+  background: #fdfdfd;
+  color: #333;
+}
+
+/* Make images responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* App layout styling */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content area */
+.content {
+  flex: 1;  /* Push footer (if any) to bottom, not used now but for future */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
