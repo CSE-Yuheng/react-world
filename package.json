@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+
   "name": "react-world/react-01",
   "version": "0.1.0",
   "private": false,
@@ -44,9 +44,9 @@
   "devDependencies": {
     "gh-pages": "^6.3.0",
     "react-router-dom": "^7.4.0"
-=======
+
   "devDependencies": {
     "gh-pages": "^6.3.0"
->>>>>>> 8445341443e07e65f79df2a2e602a10dd1335bd2
+
   }
 }
