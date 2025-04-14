@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-world/static/css/main.82b31f85.css",
+    "main.js": "/react-world/static/js/main.2a3e722b.js",
+    "static/media/Essential Tools.jpg": "/react-world/static/media/Essential Tools.5fcac93eac362fe90d43.jpg",
+    "static/media/Circular Saw.jpg": "/react-world/static/media/Circular Saw.863305ac4cfce83f6cbe.jpg",
+    "static/media/Workshop scene.jpg": "/react-world/static/media/Workshop scene.611192dd4ffc0e8662bc.jpg",
+    "static/media/Hand Tool Set.jpg": "/react-world/static/media/Hand Tool Set.ff8a83c8d6114849cc74.jpg",
+    "static/media/Choosing a Saw.jpg": "/react-world/static/media/Choosing a Saw.e3ea411362d4668f2396.jpg",
+    "static/media/Cordless Drill.jpg": "/react-world/static/media/Cordless Drill.9d0c7a1823f50f928f37.jpg",
+    "static/media/Tool Safety.jpg": "/react-world/static/media/Tool Safety.d8d7b08010aca2c64d63.jpg",
+    "index.html": "/react-world/index.html",
+    "main.82b31f85.css.map": "/react-world/static/css/main.82b31f85.css.map",
+    "main.2a3e722b.js.map": "/react-world/static/js/main.2a3e722b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82b31f85.css",
+    "static/js/main.2a3e722b.js"
+  ]
+}
