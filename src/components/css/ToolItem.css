@@ -1,0 +1,21 @@
+/* src/components/css/ToolItem.css */
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tool-item span {
+  flex: 1;
+}
+
+.tool-item button {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.tool-item .tool-name {
+  font-weight: bold;
+}
