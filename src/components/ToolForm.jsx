@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+// src/components/ToolForm.jsx
+import React, { useState, useEffect } from 'react';
 import Joi from 'joi';
 
-const ToolForm = ({ onAdd }) => {
+const ToolForm = ({ tool, onAdd, onSave, onCancel }) => {
+  // If editing, preload formData from `tool`; otherwise start blank
   const [formData, setFormData] = useState({
     name: '',
     price: '',
@@ -9,9 +11,23 @@ const ToolForm = ({ onAdd }) => {
     description: '',
     img_name: ''
   });
-
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
+
+  // On mount or when `tool` changes, populate formData
+  useEffect(() => {
+    if (tool) {
+      setFormData({
+        name: tool.name,
+        price: tool.price,
+        brand: tool.brand,
+        description: tool.description,
+        img_name: tool.img_name
+      });
+      setErrors({});
+      setSuccess(false);
+    }
+  }, [tool]);
 
   const schema = Joi.object({
     name: Joi.string().min(3).required().label('Name'),
@@ -24,12 +40,11 @@ const ToolForm = ({ onAdd }) => {
   const validate = () => {
     const { error } = schema.validate(formData, { abortEarly: false });
     if (!error) return null;
-
-    const errorObj = {};
+    const errObj = {};
     for (let item of error.details) {
-      errorObj[item.path[0]] = item.message;
+      errObj[item.path[0]] = item.message;
     }
-    return errorObj;
+    return errObj;
   };
 
   const handleChange = ({ target: { name, value } }) => {
@@ -47,46 +62,44 @@ const ToolForm = ({ onAdd }) => {
     }
 
     try {
-      const response = await fetch('/api/tools', {
-        method: 'POST',
+      const url = tool
+        ? `/api/tools/${tool._id}`
+        : '/api/tools';
+      const method = tool ? 'PUT' : 'POST';
+      const res = await fetch(url, {
+        method,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-
-      if (!response.ok) {
-        const { error } = await response.json();
-        setErrors({ submit: error });
+      const result = await res.json();
+      if (!res.ok) {
+        setErrors({ submit: result.error || 'Server error' });
         return;
       }
 
-      const { tool } = await response.json();
-      onAdd(tool);
-      setFormData({
-        name: '',
-        price: '',
-        brand: '',
-        description: '',
-        img_name: ''
-      });
+      if (tool) {
+        // editing
+        onSave(result.tool);
+      } else {
+        // adding
+        onAdd(result.tool);
+        setFormData({ name:'',price:'',brand:'',description:'',img_name:'' });
+      }
       setErrors({});
       setSuccess(true);
     } catch (err) {
-      setErrors({ submit: 'An unexpected error occurred.' });
+      setErrors({ submit: 'Unexpected error' });
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="tool-form">
-      <h2>Add a New Tool</h2>
-      {success && <p className="success">Tool added successfully!</p>}
+      <h2>{tool ? 'Edit Tool' : 'Add a New Tool'}</h2>
+      {success && <p className="success">{tool ? 'Tool updated!' : 'Tool added!'}</p>}
       {errors.submit && <p className="error">{errors.submit}</p>}
       <div>
         <label>Name:</label>
-        <input
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
+        <input name="name" value={formData.name} onChange={handleChange} />
         {errors.name && <p className="error">{errors.name}</p>}
       </div>
       <div>
@@ -101,11 +114,7 @@ const ToolForm = ({ onAdd }) => {
       </div>
       <div>
         <label>Brand:</label>
-        <input
-          name="brand"
-          value={formData.brand}
-          onChange={handleChange}
-        />
+        <input name="brand" value={formData.brand} onChange={handleChange} />
         {errors.brand && <p className="error">{errors.brand}</p>}
       </div>
       <div>
@@ -119,17 +128,15 @@ const ToolForm = ({ onAdd }) => {
       </div>
       <div>
         <label>Image Name:</label>
-        <input
-          name="img_name"
-          value={formData.img_name}
-          onChange={handleChange}
-        />
+        <input name="img_name" value={formData.img_name} onChange={handleChange} />
         {errors.img_name && <p className="error">{errors.img_name}</p>}
       </div>
-      <button type="submit">Add Tool</button>
+      <button type="submit">{tool ? 'Save Changes' : 'Add Tool'}</button>
+      {tool && <button type="button" onClick={onCancel}>Cancel</button>}
     </form>
   );
 };
 
 export default ToolForm;
+
 
