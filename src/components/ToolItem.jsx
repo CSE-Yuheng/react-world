@@ -1,32 +1,36 @@
-// src/components/ToolItem.jsx
 import React, { useState } from 'react';
 import ToolForm from './ToolForm';
-import './css/ToolItem.css';
 
 const ToolItem = ({ tool, onUpdate, onDelete }) => {
-  const [isEditing, setIsEditing] = useState(false);
+  const [editing, setEditing] = useState(false);
 
   const handleSave = (updatedTool) => {
     onUpdate(updatedTool);
-    setIsEditing(false);
+    setEditing(false);
   };
 
   return (
     <li className="tool-item">
-      {isEditing ? (
+      {editing ? (
         <ToolForm
           tool={tool}
           onSave={handleSave}
-          onCancel={() => setIsEditing(false)}
+          onCancel={() => setEditing(false)}
         />
       ) : (
-        <>
-          <span className="tool-name">{tool.name}</span>
-          <span className="tool-price">${tool.price}</span>
-          <span className="tool-brand">{tool.brand}</span>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
+        <div className="tool-details">
+          <h3>{tool.name}</h3>
+          <img
+            src={tool.img_name}
+            alt={tool.name}
+            style={{ maxWidth: '200px', display: 'block', margin: '0.5rem 0' }}
+          />
+          <p><strong>Brand:</strong> {tool.brand}</p>
+          <p><strong>Price:</strong> ${tool.price}</p>
+          <p>{tool.description}</p>
+          <button onClick={() => setEditing(true)}>Edit</button>
           <button onClick={() => onDelete(tool._id)}>Delete</button>
-        </>
+        </div>
       )}
     </li>
   );

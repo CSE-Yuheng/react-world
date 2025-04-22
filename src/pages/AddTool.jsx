@@ -1,4 +1,3 @@
-// src/pages/AddTool.jsx
 import React, { useState, useEffect } from 'react';
 import ToolForm from '../components/ToolForm';
 import ToolItem from '../components/ToolItem';
@@ -7,13 +6,13 @@ const AddTool = () => {
   const [tools, setTools] = useState([]);
 
   useEffect(() => {
-    fetch('/api/tools')
+    fetch('https://backend-iy3a.onrender.com/api/tools')
       .then(res => res.json())
       .then(data => setTools(data))
       .catch(err => console.error('Error fetching tools:', err));
   }, []);
 
-  // Add new tool to list
+  // Add new tool to state list
   const handleAddTool = (newTool) => {
     setTools(prev => [...prev, newTool]);
   };
@@ -28,20 +27,18 @@ const AddTool = () => {
   // Delete a tool by ID
   const handleDeleteTool = (id) => {
     if (!window.confirm('Delete this tool?')) return;
-    fetch(`/api/tools/${id}`, { method: 'DELETE' })
+    fetch(`https://backend-iy3a.onrender.com/api/tools/${id}`, { method: 'DELETE' })
       .then(res => {
         if (!res.ok) throw new Error('Delete failed');
         setTools(prev => prev.filter(t => t._id !== id));
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error('Error deleting tool:', err));
   };
 
   return (
     <div className="add-tool-page">
-      {/* Add form */}
       <ToolForm onAdd={handleAddTool} />
 
-      {/* List of tools */}
       <h2>Available Tools</h2>
       <ul className="tool-list">
         {tools.map(tool => (
@@ -58,4 +55,3 @@ const AddTool = () => {
 };
 
 export default AddTool;
-

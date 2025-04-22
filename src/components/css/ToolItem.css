@@ -1,21 +1,26 @@
 /* src/components/css/ToolItem.css */
 .tool-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.tool-item span {
+.tool-details {
   flex: 1;
 }
 
-.tool-item button {
-  margin-left: 0.5rem;
-  padding: 0.25rem 0.5rem;
+.tool-actions button {
+  margin-left: 8px;
+  padding: 4px 8px;
+  border: none;
+  background: #4a90e2;
+  color: white;
   cursor: pointer;
+  border-radius: 4px;
 }
 
-.tool-item .tool-name {
-  font-weight: bold;
+.tool-actions button:hover {
+  background: #357abd;
 }

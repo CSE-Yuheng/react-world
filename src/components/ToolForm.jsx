@@ -1,4 +1,3 @@
-// src/components/ToolForm.jsx
 import React, { useState, useEffect } from 'react';
 import Joi from 'joi';
 
@@ -14,7 +13,7 @@ const ToolForm = ({ tool, onAdd, onSave, onCancel }) => {
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
 
-  // On mount or when `tool` changes, populate formData
+  // Populate fields when `tool` prop changes
   useEffect(() => {
     if (tool) {
       setFormData({
@@ -41,9 +40,9 @@ const ToolForm = ({ tool, onAdd, onSave, onCancel }) => {
     const { error } = schema.validate(formData, { abortEarly: false });
     if (!error) return null;
     const errObj = {};
-    for (let item of error.details) {
-      errObj[item.path[0]] = item.message;
-    }
+    error.details.forEach(d => {
+      errObj[d.path[0]] = d.message;
+    });
     return errObj;
   };
 
@@ -63,8 +62,8 @@ const ToolForm = ({ tool, onAdd, onSave, onCancel }) => {
 
     try {
       const url = tool
-        ? `/api/tools/${tool._id}`
-        : '/api/tools';
+        ? `https://backend-iy3a.onrender.com/api/tools/${tool._id}`
+        : 'https://backend-iy3a.onrender.com/api/tools';
       const method = tool ? 'PUT' : 'POST';
       const res = await fetch(url, {
         method,
@@ -83,7 +82,7 @@ const ToolForm = ({ tool, onAdd, onSave, onCancel }) => {
       } else {
         // adding
         onAdd(result.tool);
-        setFormData({ name:'',price:'',brand:'',description:'',img_name:'' });
+        setFormData({ name:'', price:'', brand:'', description:'', img_name:'' });
       }
       setErrors({});
       setSuccess(true);
@@ -97,11 +96,13 @@ const ToolForm = ({ tool, onAdd, onSave, onCancel }) => {
       <h2>{tool ? 'Edit Tool' : 'Add a New Tool'}</h2>
       {success && <p className="success">{tool ? 'Tool updated!' : 'Tool added!'}</p>}
       {errors.submit && <p className="error">{errors.submit}</p>}
+
       <div>
         <label>Name:</label>
         <input name="name" value={formData.name} onChange={handleChange} />
         {errors.name && <p className="error">{errors.name}</p>}
       </div>
+
       <div>
         <label>Price:</label>
         <input
@@ -112,11 +113,13 @@ const ToolForm = ({ tool, onAdd, onSave, onCancel }) => {
         />
         {errors.price && <p className="error">{errors.price}</p>}
       </div>
+
       <div>
         <label>Brand:</label>
         <input name="brand" value={formData.brand} onChange={handleChange} />
         {errors.brand && <p className="error">{errors.brand}</p>}
       </div>
+
       <div>
         <label>Description:</label>
         <textarea
@@ -126,11 +129,13 @@ const ToolForm = ({ tool, onAdd, onSave, onCancel }) => {
         />
         {errors.description && <p className="error">{errors.description}</p>}
       </div>
+
       <div>
         <label>Image Name:</label>
         <input name="img_name" value={formData.img_name} onChange={handleChange} />
         {errors.img_name && <p className="error">{errors.img_name}</p>}
       </div>
+
       <button type="submit">{tool ? 'Save Changes' : 'Add Tool'}</button>
       {tool && <button type="button" onClick={onCancel}>Cancel</button>}
     </form>
@@ -138,5 +143,3 @@ const ToolForm = ({ tool, onAdd, onSave, onCancel }) => {
 };
 
 export default ToolForm;
-
-
