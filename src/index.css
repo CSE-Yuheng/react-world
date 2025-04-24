@@ -1,12 +1,154 @@
+/* index.css */
+
+/* Global Reset and Base Styles */
 html, body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: #fefefe;
+  font-family: 'Roboto', sans-serif;
+  background: #f9f9f9;
+  color: #333;
 }
 
+/* Main Content Container */
 .content {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Navigation Bar */
+.nav {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.nav .menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-links.open {
+  display: block;
+}
+.nav-links li {
+  margin: 0 10px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  transition: color 0.2s;
+}
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: #007bff;
+}
+
+/* Tool Form Styles */
+.tool-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+.tool-form h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+.tool-form div {
+  margin-bottom: 15px;
+}
+.tool-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.tool-form input,
+.tool-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.tool-form button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.tool-form button:hover {
+  background: #0056b3;
+}
+
+/* Success & Error Messages */
+.success {
+  color: #28a745;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.error {
+  color: #dc3545;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Tool List Grid */
+.tool-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Tool Item */
+.tool-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.tool-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.tool-details h3 {
+  margin: 10px 0;
+  font-size: 1.25rem;
+}
+.tool-details p {
+  margin: 5px 0;
+}
+.tool-details button {
+  margin-right: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tool-details button:last-child {
+  background: #dc3545;
+}
+.tool-details button:hover {
+  opacity: 0.9;
 }
