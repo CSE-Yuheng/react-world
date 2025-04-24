@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": false,
   "homepage": "https://CSE-Yuheng.github.io/react-world/",
+  "proxy": "https://backend-iy3a.onrender.com",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "joi": "^17.13.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
@@ -15,8 +17,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,4 +46,3 @@
     "react-router-dom": "^7.4.0"
   }
 }
-
